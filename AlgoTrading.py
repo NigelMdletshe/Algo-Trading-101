@@ -20,4 +20,6 @@ params = {
 }
 
 data = requests.get(url,params=params)
-print(data.json())
+data = data.json()["data"]["ohlc"]
+df = pd.DataFrame(data)
+print(df)
